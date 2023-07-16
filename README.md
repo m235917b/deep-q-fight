@@ -10,6 +10,13 @@ Or you can create your own environment and install all packages via the "require
 pip install -r requirements.txt
 
 If you do not have CUDA available, or want to run PyTorch on CPU, or want to run the project on Mac/Linux you will have to manually install all required packages.
-To do this, first create an empty virtual environment and activate it. Then install the following packages:
+To do this, first create an empty virtual environment and activate it. Then install the following packages (or any other compatible versions):
 
-numpy
+numpy==1.24.1
+numba==0.57.1
+pygame==2.5.0
+
+Then you need to install PyTorch. To do this, visit [PyTorch start locally](https://pytorch.org/get-started/locally/) and configure the settings for your
+specifications and OS, then install the required torch version with the generated pip instruction from this site.
+
+# running the project

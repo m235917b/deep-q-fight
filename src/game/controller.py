@@ -172,7 +172,8 @@ class Controller:
             self.__view.zoom_camera(1.1)
 
     def update(self):
-        self.__clock.tick(120)
+        # change fps limit to reduce fps
+        self.__clock.tick(0)
 
         self.handle_input_output()
 

@@ -38,3 +38,6 @@ to then evaluate and observe the agents on a given set of evaluation games.
 
 The game will create a csv named "ressources/stats/stats.csv" with all the relevant data gathered during evaluation for each frame of each evaluation game which can then be analyzed for
 objective evaluation and review of the agents. Examples for that can be found in the Jupyter-Notebook "jupyter/auswertung.ipynb".
+
+To test the agent with a human player, set "PLAYER_MODE = True" in main.py. This way, one of the agents can be controlled in an evaluation game by the player. To move the agent, use
+the W, A, S, D keys. To turn the agent, move the mouse left, or right. To attack use the left mouse button, to block use the right mouse button. For zooming use the mouse wheel.

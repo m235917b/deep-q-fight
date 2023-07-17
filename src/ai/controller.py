@@ -4,11 +4,12 @@ The controller for the agents and training algorithm.
 Training and evaluation can be terminated using the ESC-key.
 """
 
+from main import PLAYER_MODE
 from ai.game_adapter import GameAdapterImpl
 from ai.model import Trainer, Tester
 
 # the number of games, the agents should be tested on
-_TEST_GAMES = 100
+_TEST_GAMES = 1 if PLAYER_MODE else 100
 # the number of games, the agents should be trained on
 _TRAINING_GAMES = 250
 

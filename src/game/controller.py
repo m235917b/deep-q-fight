@@ -13,12 +13,16 @@ from enum import Enum
 import numpy as np
 import pygame
 
+from main import PLAYER_MODE
 from game.model import World, Direction
 from game.view import View, WIDTH, HEIGHT
 from game.animation import AnimationController
 
 # the speed with which the mouse for a player turns the actor, if player is used
 MOUSE_SPEED = 0.01
+
+# change fps limit to reduce fps
+_FPS = 120 if PLAYER_MODE else 0
 
 
 class GameEvents(Enum):
@@ -60,13 +64,15 @@ class Controller:
             GameEvents.ZOOM_IN: False,
             GameEvents.ZOOM_OUT: False
         }
-        self.__follow_actor = -1
-        self.__control_actor = -1
+        self.__follow_actor = 0 if PLAYER_MODE else -1
+        self.__control_actor = 0 if PLAYER_MODE else -1
         self.__clock = pygame.time.Clock()
         self.__ticks = pygame.time.get_ticks()
 
         pygame.init()
-        pygame.mouse.set_visible(False)
+
+        if PLAYER_MODE:
+            pygame.mouse.set_visible(False)
 
         for actor in self.__world.actors:
             actor.weapon.register(self.__animation_controller)
@@ -147,7 +153,8 @@ class Controller:
             self.__world.actors[self.__control_actor] \
                 .turn((WIDTH / 2.0 - pygame.mouse.get_pos()[0]) * MOUSE_SPEED)
 
-        # pygame.mouse.set_pos(WIDTH / 2.0, HEIGHT / 2.0)
+        if PLAYER_MODE:
+            pygame.mouse.set_pos(WIDTH / 2.0, HEIGHT / 2.0)
 
         if self.__follow_actor < 0:
             if self.__control_actor < 0:
@@ -172,8 +179,7 @@ class Controller:
             self.__view.zoom_camera(1.1)
 
     def update(self):
-        # change fps limit to reduce fps
-        self.__clock.tick(0)
+        self.__clock.tick(_FPS)
 
         self.handle_input_output()
 
@@ -193,6 +199,5 @@ class Controller:
         while self.__running:
             self.update()
 
-    # TODO: remove
     def draw_eye(self, pixels):
         self.__view.draw_eye(pixels)

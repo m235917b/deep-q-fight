@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e956a5a0-e574-46d8-a578-2ad28b6a96c5" name="Changes" comment="updated jupyter notebook and stats.csv">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/stats/stats.csv" beforeDir="false" afterPath="$PROJECT_DIR$/resources/stats/stats.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ai/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ai/controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ai/game_adapter.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ai/game_adapter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,16 +116,5 @@
     <MESSAGE value="removed idea folder" />
     <MESSAGE value="updated jupyter notebook and stats.csv" />
     <option name="LAST_COMMIT_MESSAGE" value="updated jupyter notebook and stats.csv" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/ai/game_adapter.py</url>
-          <line>4</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

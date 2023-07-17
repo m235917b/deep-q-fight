@@ -18,6 +18,10 @@ __control_actors() in "src/ai/game_adapter.py".
 
 from ai import controller
 
+"""Switch if human player should control an actor.
+Should only be used for test game."""
+PLAYER_MODE = False
+
 # the path to the model used during inference for testing
 _PATH_TO_EVAL = '../resources/results/base_trained_agents.pt'
 

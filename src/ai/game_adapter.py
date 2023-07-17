@@ -8,13 +8,14 @@ import csv
 import numpy as np
 from numba import cuda, from_dtype
 
+from main import PLAYER_MODE
 from game.model import Direction
 from game.controller import Controller
 from game.constants import *
 import utils.math as math
 
 # the max number of frames, one game should run
-_TRUNCATION = 1000
+_TRUNCATION = 100000 if PLAYER_MODE else 1000
 # dump the stats for the csv every _DUMP_EVERY_FRAME frames
 _DUMP_EVERY_FRAME = 1000
 # the visual resolution for the ray-tracing algorithm with which the agents can see their environment
@@ -250,7 +251,8 @@ class GameAdapterImpl(GameAdapter):
         return inputs
 
     def __control_actors(self, actions):
-        for actor in self.__controller.world.actors:
+        actors = self.__controller.world.actors[1:] if PLAYER_MODE else self.__controller.world.actors
+        for actor in actors:
             if actions[actor.id] == 0:
                 actor.move(Direction.FORWARD)
             elif actions[actor.id] == 1:
